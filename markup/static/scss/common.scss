@@ -1,0 +1,201 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    min-width: 320px;
+}
+
+.container {
+}
+
+.overlay {
+    &_show {
+        display: block;
+    }
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.9);
+    z-index: 40;
+}
+
+.popup {
+    &_show {
+        display: block;
+    }
+    display: none;
+    width: 282px;
+    position: fixed;
+    z-index: 50;
+    top: 140px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-bottom: 62px;
+    background: url(../img/content/popup-bg-mob.png);
+    border-radius: 20px;
+    box-shadow: 0 0 28px 10px #205d86;
+    &__close-btn {
+        position: absolute;
+        right: 16px;
+        top: 10px;
+        height: 25px;
+        width: 25px;
+        background: transparent;
+        border: none;
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 22px;
+            height: 4px;
+            background: #205d86;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+    &__title {
+        padding-top: 40px;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+    &__text {
+        margin: 0;
+        margin-bottom: 28px;
+        padding: 0 12px;
+        text-align: center;
+        font-family: $main-font;
+        font-size: 18px;
+        line-height: 26px;
+        color: #eedfba;
+    }
+    &__timer-text {
+        margin: 0;
+        text-align: center;
+        font-family: $main-font;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 500;
+        color: #ff563a;
+    }
+    &__timer {
+        text-align: center;
+        font-family: $main-font;
+        color: #fff;
+        font-size: 60px;
+    }
+}
+
+.main-block {
+    position: relative;
+    z-index: 30;
+    background-color: #02060f;
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background: url(../img/content/casks-mob.png);
+        width: 268px;
+        height: 234px;
+        top: 430px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 10;
+    }
+}
+
+.inner-wrap {
+    position: relative;
+    padding-top: 160px;
+    padding-bottom: 100px;
+    background-image: url("../img/content/avtomaty.png");
+    background-repeat: no-repeat;
+    background-position: center 268px;
+    z-index: 20;
+}
+
+.promo {
+    margin-bottom: 184px;
+    text-align: center;
+    &__top {
+        display: block;
+    }
+    &__bottom {
+        display: block;
+    }
+}
+
+.btn-wrap {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 22px 70px 22px 74px;
+    text-transform: uppercase;
+    font-family: $main-font;
+    font-size: 30px;
+    font-weight: 900;
+    text-decoration: none;
+    text-shadow: 1px 2px 3px #420000;
+    color: #fff;
+    @include sprite-image($btn-bg);
+    @include sprite-position($btn-bg);
+    &_popup {
+        padding: 18px 50px 22px 64px;
+        @include sprite-image($btn-bg-popup);
+        @include sprite-position($btn-bg-popup);
+    }
+}
+
+.slider {
+    width: 320px;
+    margin: 0 auto;
+    &__slide {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0 12px 12px 12px;
+        padding: 14px 0 14px 118px;
+
+        font-family: $main-font;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #fff;
+        background: #000103;
+        border-radius: 10px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: -10px;
+        }
+        &:first-child::before {
+            top: 22px;
+            @include bg($hat);
+        }
+        &:nth-child(2)::before {
+            top: 10px;
+            @include bg($sword);
+        }
+        &:last-child::before {
+            top: 0;
+            @include bg($coins);
+        }
+    }
+    &__emphasized-text {
+        color: #ff563a;
+        font-size: 26px;
+        font-weight: 900;
+    }
+}
