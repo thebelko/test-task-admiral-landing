@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>default title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="telephone=no" name="format-detection">
+        <meta name="HandheldFriendly" content="true">
+        <link href="static/css/main.min.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script src="static/js/picturefill.js" async></script>
+
+    </head>
+
+    <body>
+        <section class="main-block">
+            <div class="inner-wrap">
+                <div class="container">
+                    <div class="promo">
+                        <div class="promo__top">
+                            <img src="static/img/content/each-week-bonuses.png">
+                        </div>
+                        <div class="promo__bottom">
+                            <picture>
+                                <source media="(min-width: 900px)" srcset="static/img/content/888888-desc.png">
+                                    <img src="static/img/content/888888.png">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="btn-wrap btn-wrap_top"><a class="btn" href="#">Рискнуть</a>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slider__inner-wrap">
+                        <div class="slider__slide">получай бездепозитные бонусы
+                            <br>по <span class='slider__emphasized-text'>8 888</span> рублей
+                        </div>
+                    </div>
+                    <div class="slider__inner-wrap">
+                        <div class="slider__slide">Участвуй в сражениях
+                            <br>и выигрывай
+                            <br>по <span class='slider__emphasized-text'>377 000</span> руб.
+                        </div>
+                    </div>
+                    <div class="slider__inner-wrap">
+                        <div class="slider__slide">Выводи свои&nbsp;выигрыши
+                            <br> <span class='slider__emphasized-text'>за 2 часа</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="btn-wrap"><a class="btn" href="#">Рискнуть</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="overlay"></div>
+        <div class="popup">
+            <button class="popup__close-btn">
+            </button>
+            <div class="popup__title">
+                <img src="static/img/content/stay-pirot.png">
+            </div>
+            <p class="popup__text">Настолько ли ты дерзок, чтобы получить специальный бонус от нашего Адмирала?
+            </p>
+            <p class="popup__timer-text">Предложение действительно:
+            </p>
+            <div class="popup__timer" id="timer"><span id='minutes'>04</span>:<span id='seconds'>59</span>
+            </div>
+            <div class="btn-wrap"><a class="btn btn_popup" href="#">Получить</a>
+            </div>
+        </div>
+
+        <script src="static/js/flickitty.js"></script>
+        <script src="static/js/main.js"></script>
+    </body>
+
+</html>

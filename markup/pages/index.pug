@@ -1,5 +1,5 @@
 doctype html
-html(class="no-js", lang="ru")
+html(lang="ru")
 
     include ../../bemto/bemto
     include ../components/head/head.pug
@@ -14,15 +14,21 @@ html(class="no-js", lang="ru")
                 .container
                     +b.promo
                         +e.top
-                            IMG(src='static/img/content/each-week-bonuses.png')
+                            img(src='static/img/content/each-week-bonuses.png')
                         +e.bottom
-                            IMG(src='static/img/content/888888.png')
-                    .btn-wrap
+                            picture
+                                source(media='(min-width: 900px)' srcset='static/img/content/888888-desc.png')
+                                img(src='static/img/content/888888.png')
+                    .btn-wrap.btn-wrap_top
                         +b.A.btn(href='#') Рискнуть
-                    +b.slider
-                        +e.slide получай бездепозитные бонусы<br> по <span class='slider__emphasized-text'>8 888</span> руб.
+                +b.slider
+                    +e.inner-wrap
+                        +e.slide получай бездепозитные бонусы<br> по <span class='slider__emphasized-text'>8 888</span> рублей
+                    +e.inner-wrap
                         +e.slide Участвуй в сражениях<br> и выигрывай<br> по <span class='slider__emphasized-text'>377 000</span> руб.
-                        +e.slide Выводи<br> свои выигрыши<br> <span class='slider__emphasized-text'>за 2 часа</span>
+                    +e.inner-wrap
+                        +e.slide Выводи свои&nbsp;выигрыши<br> <span class='slider__emphasized-text'>за 2 часа</span>
+                .container
                     .btn-wrap
                         +b.A.btn(href='#') Рискнуть
 
@@ -30,7 +36,7 @@ html(class="no-js", lang="ru")
         +b.popup
             +e.BUTTON.close-btn
             +e.title
-                IMG(src='static/img/content/stay-pirot.png')
+                img(src='static/img/content/stay-pirot.png')
             +e.P.text Настолько ли ты дерзок, чтобы получить специальный бонус от нашего Адмирала?
             +e.P.timer-text Предложение действительно:
             +e.timer(id='timer') <span id='minutes'>04</span>:<span id='seconds'>59</span>

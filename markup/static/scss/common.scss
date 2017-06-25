@@ -7,6 +7,24 @@ body {
 }
 
 .container {
+    @media (min-width: 900px) {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        &:first-of-type {
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 100px;
+                left: -70px;
+                background: url(../img/content/animation.gif);
+                width: 381px;
+                height: 57px;
+                z-index: 40;
+            }
+        }
+    }
 }
 
 .overlay {
@@ -38,6 +56,13 @@ body {
     background: url(../img/content/popup-bg-mob.png);
     border-radius: 20px;
     box-shadow: 0 0 28px 10px #205d86;
+    @media (min-width: 900px) {
+        box-sizing: border-box;
+        width: 600px;
+        padding-left: 270px;
+        padding-bottom: 0;
+        background: url(../img/content/popup-bg-desc.png);
+    }
     &__close-btn {
         position: absolute;
         right: 16px;
@@ -97,6 +122,9 @@ body {
     position: relative;
     z-index: 30;
     background-color: #02060f;
+    @media (min-width: 900px) {
+        background-color: #000307;
+    }
     &::before {
         content: '';
         position: absolute;
@@ -108,6 +136,9 @@ body {
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 10;
+        @media (min-width: 900px) {
+            display: none;
+        }
     }
 }
 
@@ -119,13 +150,25 @@ body {
     background-repeat: no-repeat;
     background-position: center 268px;
     z-index: 20;
+    @media (min-width: 900px) {
+        background-image: url("../img/content/main-bg.jpg");
+        background-position: center top;
+    }
 }
 
 .promo {
     margin-bottom: 184px;
     text-align: center;
+    @media (min-width: 900px) {
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 50;
+    }
     &__top {
         display: block;
+        @media (min-width: 900px) {
+            margin-bottom: 36px;
+        }
     }
     &__bottom {
         display: block;
@@ -135,6 +178,11 @@ body {
 .btn-wrap {
     margin-bottom: 16px;
     text-align: center;
+    &_top {
+        @media (min-width: 900px) {
+            display: none;
+        }
+    }
 }
 
 .btn {
@@ -159,6 +207,55 @@ body {
 .slider {
     width: 320px;
     margin: 0 auto;
+    @media (min-width: 900px) {
+        width: auto;
+    }
+    @media (min-width: 900px) {
+        &__inner:first-child .slider__slide br {
+            display: none;
+        }
+    }
+    &__inner-wrap {
+        width: 100%;
+    }
+    &__inner-wrap:first-child {
+        .slider__slide::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: -10px;
+            top: 22px;
+            @include bg($hat);
+            @media (min-width: 900px) {
+                @include bg($hat-desc);
+                left: -30px;
+                top: 0;
+            }
+        }
+    }
+    &__inner-wrap:nth-child(2) {
+        .slider__slide::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: -10px;
+            top: 10px;
+            @include bg($sword);
+        }
+    }
+    &__inner-wrap:last-child {
+        .slider__slide::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: -14px;
+            top: 0;
+            @include bg($coins);
+            @media (min-width: 900px) {
+                @include bg($coins-desc);
+            }
+        }
+    }
     &__slide {
         position: relative;
         box-sizing: border-box;
@@ -174,23 +271,12 @@ body {
         background: #000103;
         border-radius: 10px;
 
-        &::before {
-            content: '';
-            position: absolute;
-            display: block;
-            left: -10px;
-        }
-        &:first-child::before {
-            top: 22px;
-            @include bg($hat);
-        }
-        &:nth-child(2)::before {
-            top: 10px;
-            @include bg($sword);
-        }
-        &:last-child::before {
-            top: 0;
-            @include bg($coins);
+        @media (min-width: 900px) {
+            width: 410px;
+            padding: 20px 0 18px 124px;
+            margin-left: auto;
+            margin-right: auto;
+            background: rgba(0, 0, 0, .8);
         }
     }
     &__emphasized-text {
